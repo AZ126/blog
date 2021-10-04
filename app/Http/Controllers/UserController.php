@@ -14,4 +14,10 @@ class UserController extends Controller
        $data=["Abdul Rehman", "27", "Pakistani"];
        return view('test', ['myId'=>$id, 'myData'=>$data]);
     }
+    
+    function getData(Request $req){
+       return $req->input();
+    }
+
+
 }

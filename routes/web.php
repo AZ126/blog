@@ -22,5 +22,6 @@ Route::get('/user',[UserController::class,'show']);
 Route::get('/user/{id}',[UserController::class,'showWithId']);
 
 Route::view('users','users');
+Route::post('users',[UserController::class,'getData']);
 Route::view('about','about');
 
