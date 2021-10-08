@@ -23,6 +23,7 @@ Route::view('about', 'aboutPage');
 Route::view('users', 'usersPage');
 
 Route::get('dbConnection', [UserController::class,'index']);
+Route::get('getData', [UserController::class,'getData']);
 
 
 // Route::get('/user',[UserController::class,'show']);
