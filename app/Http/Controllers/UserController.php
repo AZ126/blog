@@ -32,7 +32,9 @@ class UserController extends Controller
     
     public function apiCall()
     {
-        return Http::get("https://reqres.in/api/users");
+        $data = Http::get("https://reqres.in/api/users");
+        $data = $data['data'];
+        return view('usersPage',['data'=>$data]);
     }
 
 
