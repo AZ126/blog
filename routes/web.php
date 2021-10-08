@@ -24,6 +24,7 @@ Route::view('users', 'usersPage');
 
 Route::get('dbConnection', [UserController::class,'index']);
 Route::get('getData', [UserController::class,'getData']);
+Route::get('api', [UserController::class,'apiCall']);
 
 
 // Route::get('/user',[UserController::class,'show']);

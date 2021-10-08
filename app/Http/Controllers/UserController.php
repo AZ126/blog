@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
 use App\Models\User;
+use Illuminate\Support\Facades\Http;
 
 class UserController extends Controller
 {
@@ -28,6 +29,12 @@ class UserController extends Controller
         echo 'db connection will show here!';
         return DB::select("SELECT * FROM `users`");
     }
+    
+    public function apiCall()
+    {
+        return Http::get("https://reqres.in/api/users");
+    }
+
 
     /**
      * Show the form for creating a new resource.
