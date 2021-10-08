@@ -18,9 +18,12 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::view('home', 'homePage');
-// Route::view('about', 'aboutPage');
+Route::view('home', 'homePage')->middleware('protectedPage');
+Route::view('about', 'aboutPage');
 Route::view('users', 'usersPage');
+
+Route::get('dbConnection', [UserController::class,'index']);
+
 
 // Route::get('/user',[UserController::class,'show']);
 // Route::get('/user/{id}',[UserController::class,'showWithId']);
@@ -30,6 +33,6 @@ Route::view('users', 'usersPage');
 // Route::view('about','about');
 
 
-Route::group(['middleware'=>['protectedPage']], function(){
-    Route::view('about', 'aboutPage');
-});
+// Route::group(['middleware'=>['protectedPage']], function(){
+//     Route::view('about', 'aboutPage');
+// });
