@@ -11,4 +11,8 @@ class StoreUsersController extends Controller
         $req->session()->flash('user',$userName);
         return redirect('store');
     }
+
+    function uploadFile(Request $req){
+        return $req->file('file')->store('img');
+    }
 }

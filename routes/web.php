@@ -30,6 +30,9 @@ Route::get('api', [UserController::class,'apiCall']);
 Route::view('store', 'storeusers');
 Route::post('storeController', [StoreUsersController::class, 'storeM']);
 
+Route::view('file', 'upload');
+Route::post('uploadfile', [StoreUsersController::class, 'uploadFile']);
+
 
 // Route::get('/user',[UserController::class,'show']);
 // Route::get('/user/{id}',[UserController::class,'showWithId']);
