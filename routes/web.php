@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\StoreUsersController;
 
 /*
 |--------------------------------------------------------------------------
@@ -25,6 +26,9 @@ Route::view('users', 'usersPage');
 Route::get('dbConnection', [UserController::class,'index']);
 Route::get('getData', [UserController::class,'getData']);
 Route::get('api', [UserController::class,'apiCall']);
+
+Route::view('store', 'storeusers');
+Route::post('storeController', [StoreUsersController::class, 'storeM']);
 
 
 // Route::get('/user',[UserController::class,'show']);
