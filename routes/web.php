@@ -1,9 +1,10 @@
 <?php
 
+use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\StoreUsersController;
-use Illuminate\Support\Facades\App;
+use App\Http\Controllers\MembersController;
 
 /*
 |--------------------------------------------------------------------------
@@ -40,6 +41,13 @@ Route::get('local/{lang}', function($lang){
 });
 
 Route::view('addMamber', 'addMambers');
+Route::post('addMamber', [MembersController::class, 'store']);
+
+Route::get('memberList', [MembersController::class, 'show']);
+Route::get('delete/{id}', [MembersController::class, 'destroy']);
+
+Route::get('edit/{id}', [MembersController::class, 'edit']);
+Route::post('edit', [MembersController::class, 'update']);
 
 // Route::get('/user',[UserController::class,'show']);
 // Route::get('/user/{id}',[UserController::class,'showWithId']);
@@ -47,7 +55,6 @@ Route::view('addMamber', 'addMambers');
 // Route::view('users','users');
 // Route::post('users',[UserController::class,'getData']);
 // Route::view('about','about');
-
 
 // Route::group(['middleware'=>['protectedPage']], function(){
 //     Route::view('about', 'aboutPage');
