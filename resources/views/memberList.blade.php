@@ -1,3 +1,5 @@
+<a href="addMamber">Add Member</a>
+
 <table border="1">
     <tr>
         <td>ID</td>
@@ -13,8 +15,8 @@
         <td>{{$data['email']}}</td>
         <td>{{$data['address']}}</td>
         <td>
-            <a href="delete/{{$data['id']}}">Delete</a><br />
-            <a href="edit/{{$data['id']}}">Edit</a>
+            <a href={{"delete/".$data['id']}}>Delete</a><br />
+            <a href={{"edit/".$data['id']}}>Edit</a>
         </td>
     </tr>
     @endforeach

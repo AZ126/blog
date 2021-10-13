@@ -81,8 +81,8 @@ class MembersController extends Controller
         $data->name = $request->name;
         $data->address = $request->address;
         $data->email = $request->email;
-        $data->save();
-        return redirect('memberList');
+        $data->update();
+        return redirect('memberList')->with("Data Updated Successfully.!");
     }
 
     /**
