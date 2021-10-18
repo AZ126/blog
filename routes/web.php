@@ -49,6 +49,8 @@ Route::get('delete/{id}', [MembersController::class, 'destroy']);
 Route::get('edit/{id}', [MembersController::class, 'edit']);
 Route::put('edit/update/{id}', [MembersController::class, 'update']);
 
+Route::get('list/', [MembersController::class, 'QueryBuilder']);
+
 // Route::get('/user',[UserController::class,'show']);
 // Route::get('/user/{id}',[UserController::class,'showWithId']);
 

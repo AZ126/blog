@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Member;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class MembersController extends Controller
 {
@@ -53,7 +54,7 @@ class MembersController extends Controller
     public function show(Member $member)
     {
         $data = $member::paginate(8);
-        return view('memberList', ["members"=>$data]);
+        return view('memberList', ["members" => $data]);
     }
 
     /**
@@ -65,7 +66,7 @@ class MembersController extends Controller
     public function edit(Member $member, $id)
     {
         $data = $member::find($id);
-        return view('edit', ['data'=>$data]);
+        return view('edit', ['data' => $data]);
     }
 
     /**
@@ -96,5 +97,32 @@ class MembersController extends Controller
         $data = $member::find($id);
         $data->delete();
         return redirect('memberList');
+    }
+
+    public function QueryBuilder(Request $req)
+    {
+        // $data = DB::table('members')->get();
+        // return view('qblist', ['data'=>$data]);
+
+        // return DB::table('members')->insert([
+        //     'name'=>'Test',
+        //     'email'=>'ab@gm.com',
+        //     'address'=>'N/A',
+        // ]);
+
+        // return DB::table('members')
+        // ->where('id', 13)
+        // ->update([
+        //     'name'=>'Test1',
+        //     'email'=>'ab1@gm.com',
+        //     'address'=>'1N/A',
+        // ]);
+
+        // return DB::table('members')
+        // ->where('id', 13)
+        // ->delete();
+
+        return DB::table('members')
+            ->updateOrInsert(['id' => '1'], ['name' => 'Abdul Rehman']);
     }
 }
