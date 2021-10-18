@@ -46,6 +46,7 @@
         </div>
     </nav>
     <div id="content">
+        <h1>Abdul Rehman</h1>
         @yield('content')
     </div>
 </body>
