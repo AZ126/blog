@@ -6,6 +6,7 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\StoreUsersController;
 use App\Http\Controllers\MembersController;
 use App\Http\Controllers\AggrigationController;
+use App\Http\Controllers\AccessorController;
 
 /*
 |--------------------------------------------------------------------------
@@ -53,6 +54,8 @@ Route::put('edit/update/{id}', [MembersController::class, 'update']);
 Route::get('list/', [MembersController::class, 'QueryBuilder']);
 Route::get('aggrigation/', [AggrigationController::class, 'operations']);
 Route::get('joins/', [AggrigationController::class, 'joins']);
+
+Route::get('accessor/', [AccessorController::class, 'index']);
 
 // Route::get('/user',[UserController::class,'show']);
 // Route::get('/user/{id}',[UserController::class,'showWithId']);
