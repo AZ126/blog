@@ -46,7 +46,6 @@
         </div>
     </nav>
     <div id="content">
-        <h1>MurtaZa Ahmad!</h1>
         @yield('content')
     </div>
 </body>
