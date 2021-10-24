@@ -9,6 +9,8 @@ use App\Http\Controllers\AggrigationController;
 use App\Http\Controllers\AccessorController;
 use App\Http\Controllers\MutatorController;
 
+use App\Mail\EmailTemplate;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -58,6 +60,10 @@ Route::get('joins/', [AggrigationController::class, 'joins']);
 
 Route::get('accessor/', [AccessorController::class, 'index']);
 Route::get('mutator/', [MutatorController::class, 'store']);
+
+Route::get('email/', function(){
+    return new EmailTemplate();    
+});
 
 // Route::get('/user',[UserController::class,'show']);
 // Route::get('/user/{id}',[UserController::class,'showWithId']);
