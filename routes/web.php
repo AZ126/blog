@@ -7,6 +7,7 @@ use App\Http\Controllers\StoreUsersController;
 use App\Http\Controllers\MembersController;
 use App\Http\Controllers\AggrigationController;
 use App\Http\Controllers\AccessorController;
+use App\Http\Controllers\MutatorController;
 
 /*
 |--------------------------------------------------------------------------
@@ -56,6 +57,7 @@ Route::get('aggrigation/', [AggrigationController::class, 'operations']);
 Route::get('joins/', [AggrigationController::class, 'joins']);
 
 Route::get('accessor/', [AccessorController::class, 'index']);
+Route::get('mutator/', [MutatorController::class, 'store']);
 
 // Route::get('/user',[UserController::class,'show']);
 // Route::get('/user/{id}',[UserController::class,'showWithId']);
