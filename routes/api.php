@@ -21,3 +21,6 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 Route::get("getAPI/{id?}",[DummyAPI::class,'getData']);
+Route::post("postAPI",[DummyAPI::class,'postData']);
+Route::put("putAPI",[DummyAPI::class,'putData']);
+Route::delete("deleteAPI/{id}",[DummyAPI::class,'deleteData']);
