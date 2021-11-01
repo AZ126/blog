@@ -25,3 +25,4 @@ Route::post("postAPI",[DummyAPI::class,'postData']);
 Route::put("putAPI",[DummyAPI::class,'putData']);
 Route::delete("deleteAPI/{id}",[DummyAPI::class,'deleteData']);
 Route::get("searchAPI/{name}",[DummyAPI::class,'searchData']);
+Route::post("validateAPI",[DummyAPI::class,'validateData']);

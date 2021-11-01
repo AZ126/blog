@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Member;
+use Dotenv\Validator as DotenvValidator;
+use Validator;
 
 class DummyAPI extends Controller
 {
@@ -47,5 +49,25 @@ class DummyAPI extends Controller
     function searchData($name)
     {
         return Member::where('name','like','%'.$name.'%')->get();
+    }
+
+    function validateData(Request $req)
+    {
+        $rules = array(
+            "name"=>"required | max:4"
+        );
+        $validator = Validator::make($req->all(), $rules);
+        if ($validator->fails()) {
+            return $validator->errors();
+        }
+        else {
+            $member = new Member;
+            $member->name=$req->name;
+            $member->email=$req->email;
+            $member->address=$req->address;
+            $result = $member->save();
+            return $result ? ["result" => "Success"]
+            : ["result" => "Failed"];
+        }
     }
 }
