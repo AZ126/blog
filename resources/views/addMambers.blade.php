@@ -1,5 +1,5 @@
 
-@extends('components.header')
+@include('components.header')
 
 <h1>Add Mambers</h1>
 
